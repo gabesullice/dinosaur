@@ -22,7 +22,7 @@ function pumpjack_add_js() {
   );
 
   foreach ($actions as $action => $options) {
-    _e3_zen_add_js_files($action, $options['plugin']);
+    _e3_zen_add_js($action, $options['plugin']);
   }
 
   drupal_add_js(drupal_get_path('theme', 'e3_zen') .'/js/main.js', array(
