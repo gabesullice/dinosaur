@@ -1,6 +1,6 @@
-!function($, Drupal, document, window) {
+!function($, pumpJack, Drupal, document, window) {
 
-  e3.actions.samify = function () {
+  $(document).ready(function () {
     $('.views-row .node-teaser').samify({
       'resize': true,
       'vshrink': true,
@@ -15,6 +15,6 @@
         }
       }
     });
-  }
+  });
 
-}(jQuery, e3, Drupal, document, window);
+}(jQuery, pumpJack, Drupal, document, window);

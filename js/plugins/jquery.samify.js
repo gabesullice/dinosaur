@@ -14,7 +14,7 @@
       'hshrink' : false, // Shrink each column, ignores width
       'cols'    : 0,     // Either a fixed number or a function returning a number of columns (useful for breakpoints)
       'resize'  : false, // Whether or not to recalculate on window resize
-      'throttle': 250,   // Throttle delay for resize
+      'throttle': 250    // Throttle delay for resize
     }, settings, options);
 
     // Entry point

@@ -7,14 +7,13 @@
 // wrapping it with an "anonymous closure". See:
 // - http://drupal.org/node/1446420
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
-(function ($, e3, Drupal, window, document, undefined) {
+(function ($, Drupal, window, document, undefined) {
 
-  $(document).ready(function () {
-    $('body').once('e3_actions', function () {
-      $.each(e3.actions, function(name, action) {
-        action()
-      });
-    });
-  });
+  pumpJack = {
+    'breakPoints': {
+      small: 320,
+      medium: 720
+    }
+  };
 
-})(jQuery, e3, Drupal, this, this. document);
+})(jQuery, Drupal, this, this. document);

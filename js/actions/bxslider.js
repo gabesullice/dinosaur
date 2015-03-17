@@ -1,4 +1,4 @@
-!function($, Drupal, document, window) {
+!function($, pumpJack, Drupal, document, window) {
 
   e3.actions.bxSlider = function () {
 
@@ -26,4 +26,4 @@
     });
   }
 
-}(jQuery, e3, Drupal, document, window);
+}(jQuery, pumpJack, Drupal, document, window);
