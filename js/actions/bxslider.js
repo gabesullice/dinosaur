@@ -1,7 +1,6 @@
-!function($, pumpJack, Drupal, document, window) {
+!function($) {
 
-  e3.actions.bxSlider = function () {
-
+  $(document).ready(function () {
     var sliders = {
       'selector': {'options'},
 
@@ -24,6 +23,6 @@
     $.each(sliders, function (selector, options) {
       $(selector).bxSlider(options);
     });
-  }
+  });
 
-}(jQuery, pumpJack, Drupal, document, window);
+}(jQuery);

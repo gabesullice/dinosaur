@@ -1,4 +1,4 @@
-!function($, pumpJack, Drupal, document, window) {
+!function($) {
 
   $(document).ready(function () {
     $('.views-row .node-teaser').samify({
@@ -17,4 +17,4 @@
     });
   });
 
-}(jQuery, pumpJack, Drupal, document, window);
+}(jQuery);

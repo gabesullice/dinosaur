@@ -1,11 +1,11 @@
-!function($, pumpJack, Drupal, document, window) {
+!function($) {
 
   Drupal.behaviors.actionName = function () {
-    attach: function (context,settings) {
+    attach: function (context, settings) {
       $(someSelector, context).once(function () {
-
+        // do work ...
       });
     }
-  }
+  };
 
-}(jQuery, pumpJack, Drupal, document, window);
+}(jQuery);
