@@ -1,0 +1,6 @@
+name = Pumpjack Helper
+description = Adds helper functionality for the pumpjack theme.
+package = Pumpjack
+core = 7.x
+
+dependencies[] = context
