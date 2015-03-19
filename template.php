@@ -34,10 +34,38 @@ function pumpjack_add_js() {
  * Helper function to add actions and plugins.
  */
 function _pumpjack_add_js($action, $plugin = FALSE) {
-  $pumpjack_root = &drupal_static(__FUNCTION__ . 'root', drupal_get_path('theme', 'pumpjack'));
   // Load minified js when debugging is off.
   $suffix = (PUMPJACK_DEBUG) ? '.js' : '.min.js';
 
-  if ($plugin) drupal_add_js($pumpjack_root . '/js/plugins/jquery.' . $action . $suffix);
-  drupal_add_js($pumpjack_root . '/js/actions/' . $action . $suffix);
+  if ($plugin) drupal_add_js(_pumpjack_get_root() . '/js/plugins/jquery.' . $action . $suffix);
+  drupal_add_js(_pumpjack_get_root() . '/js/actions/' . $action . $suffix);
+}
+
+/**
+ * Implements hook_context_plugins().
+ */
+function pumpjack_context_plugins() {
+  $plugins = array();
+
+  /**
+  * Reactions
+  */
+  $plugins['pumpjack_addjs'] = array(
+    'handler' => array(
+      'path' => _pumpjack_get_root() . '/plugins',
+      'file' => 'pumpjack_addjs.inc',
+      'class' => 'pumpjack_addjs',
+      'parent' => 'pumpjack',
+    ),
+  );
+
+  return $plugins;
+}
+
+/**
+ * Helper function to get the theme root.
+ */
+function _pumpjack_get_root() {
+  $pumpjack_root = &drupal_static(__FUNCTION__ . 'root', drupal_get_path('theme', 'pumpjack'));
+  return $pumpjack_root;
 }
