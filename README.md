@@ -2,7 +2,7 @@ Pumpjack
 --------
 
 ### Description
-Pumpjack is a Drupal basetheme, currently sub-theming Mothership, but not tightly coupled with it. Its purpose is to illustrate a convenient pattern for adding and maintaining JavaSript in the context of a Drupal site.
+Pumpjack is a Drupal theme, currently sub-theming Mothership, but not tightly coupled with it. Its purpose is to illustrate a convenient pattern for adding and maintaining JavaSript in the context of a Drupal site.
 
 ![pumpjack image](http://static.guim.co.uk/sys-images/Business/Pix/pictures/2012/8/6/1344279654109/Oil-pump-units-silhouette-008.jpg)
 
