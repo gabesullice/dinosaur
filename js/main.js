@@ -1,4 +1,4 @@
-!function ($) {
+!function($, Drupal, dinosaur, document, window, undefined) {
 
   dinosaur = {
     'breakPoints': {
@@ -7,4 +7,4 @@
     }
   };
 
-}(jQuery);
+}(jQuery, Drupal, dinosaur, document, window);

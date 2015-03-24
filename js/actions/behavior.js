@@ -1,4 +1,4 @@
-!function($) {
+!function($, Drupal, dinosaur, document, window, undefined) {
 
   Drupal.behaviors.actionName = function () {
     attach: function (context, settings) {
@@ -8,4 +8,4 @@
     }
   };
 
-}(jQuery);
+}(jQuery, Drupal, dinosaur, document, window);

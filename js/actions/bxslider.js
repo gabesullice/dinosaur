@@ -1,4 +1,4 @@
-!function($) {
+!function($, Drupal, dinosaur, document, window, undefined) {
 
   $(document).ready(function () {
     var sliders = {
@@ -25,4 +25,4 @@
     });
   });
 
-}(jQuery);
+}(jQuery, Drupal, dinosaur, document, window);

@@ -1,4 +1,4 @@
-!function($) {
+!function($, Drupal, dinosaur, document, window, undefined) {
 
   $(document).ready(function () {
     $('.views-row .node-teaser').samify({
@@ -17,4 +17,4 @@
     });
   });
 
-}(jQuery);
+}(jQuery, Drupal, dinosaur, document, window);
