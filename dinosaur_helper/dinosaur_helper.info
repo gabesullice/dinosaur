@@ -1,0 +1,6 @@
+name = Dinosaur Helper
+description = Adds helper functionality for the dinosaur theme.
+package = Dinosaur
+core = 7.x
+
+dependencies[] = context

@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function dinosaur_helper_ctools_plugin_api($module, $api) {
+  if ($module == 'context' && $api == 'plugins') {
+    return array('version' => 3);
+  }
+}
+
+/**
+ * Implements hook_context_plugins().
+ */
+function dinosaur_helper_context_plugins() {
+  $plugins = array();
+
+  /**
+   * Reactions
+   */
+  $plugins['dinosaur_helper_addjs'] = array(
+    'handler' => array(
+      'path' => drupal_get_path('module', 'dinosaur_helper') . '/plugins',
+      'file' => 'dinosaur_helper_addjs.inc',
+      'class' => 'dinosaur_helper_addjs',
+      'parent' => 'context_reaction',
+    ),
+  );
+
+  return $plugins;
+}
+
+/**
+ * Implements hook_context_registry().
+ */
+function dinosaur_helper_context_registry() {
+  $registry = array();
+
+  $registry['reactions'] = array(
+    'dinosaur_helper_addjs' => array(
+      'title' => t('Dinosaur JS'),
+      'description' => t('Add dinosaur action and plugin JS assets.'),
+      'plugin' => 'dinosaur_helper_addjs',
+      'path' => drupal_get_path('module', 'dinosaur_helper') . '/plugins',
+      'file' => 'dinosaur_helper_addjs.inc',
+    ),
+  );
+
+  return $registry;
+}
+
+/**
+ * Implements hook_context_page_reaction().
+ */
+function dinosaur_helper_context_page_reaction() {
+  if ($plugin = context_get_plugin('reaction', 'dinosaur_helper_addjs')) {
+    $plugin->execute();
+  }
+}

@@ -1,6 +1,6 @@
 !function ($) {
 
-  pumpJack = {
+  dinosaur = {
     'breakPoints': {
       small: 320,
       medium: 720

@@ -1,6 +1,6 @@
 <?php
 
-define('PUMPJACK_DEBUG', TRUE);
+define('DINOSAUR_DEBUG', TRUE);
 
 //require_once "includes/context.inc";
 //require_once "includes/js.inc";
@@ -8,8 +8,8 @@ define('PUMPJACK_DEBUG', TRUE);
 /**
  * Implements hook_page_alter().
  */
-function pumpjack_page_alter($vars) {
-  pumpjack_add_js();
+function dinosaur_page_alter($vars) {
+  dinosaur_add_js();
 }
 
 /**
@@ -22,17 +22,17 @@ function pumpjack_page_alter($vars) {
  * Here, we have no conditions, but this is where we would conditionally
  * add our files.
  */
-function pumpjack_add_js() {
+function dinosaur_add_js() {
   $actions = array(
     'bxslider' => array('plugin' => TRUE),
     'samify' => array('plugin' => TRUE),
   );
 
   foreach ($actions as $action => $options) {
-    _pumpjack_add_js($action, $options['plugin']);
+    _dinosaur_add_js($action, $options['plugin']);
   }
 
-  drupal_add_js(drupal_get_path('theme', 'e3_zen') .'/js/main.js', array(
+  drupal_add_js(drupal_get_path('theme', 'dinosaur') .'/js/main.js', array(
       'scope' => 'footer'
   ));
 }
@@ -40,12 +40,12 @@ function pumpjack_add_js() {
 /**
  * Helper function to add actions and plugins.
  */
-function _pumpjack_add_js($action, $plugin = FALSE) {
+function _dinosaur_add_js($action, $plugin = FALSE) {
   // Load minified js when debugging is off.
-  $suffix = (PUMPJACK_DEBUG) ? '.js' : '.min.js';
+  $suffix = (DINOSAUR_DEBUG) ? '.js' : '.min.js';
 
-  if ($plugin) drupal_add_js(_pumpjack_get_root() . '/js/plugins/jquery.' . $action . $suffix);
-  drupal_add_js(_pumpjack_get_root() . '/js/actions/' . $action . $suffix);
+  if ($plugin) drupal_add_js(_dinosaur_get_root() . '/js/plugins/jquery.' . $action . $suffix);
+  drupal_add_js(_dinosaur_get_root() . '/js/actions/' . $action . $suffix);
 }
 
 /**
@@ -55,7 +55,7 @@ function _pumpjack_add_js($action, $plugin = FALSE) {
 /**
  * Helper function to get the theme root.
  */
-function _pumpjack_get_root() {
-  $pumpjack_root = &drupal_static(__FUNCTION__ . 'root', drupal_get_path('theme', 'pumpjack'));
-  return $pumpjack_root;
+function _dinosaur_get_root() {
+  $dinosaur_root = &drupal_static(__FUNCTION__ . 'root', drupal_get_path('theme', 'dinosaur'));
+  return $dinosaur_root;
 }

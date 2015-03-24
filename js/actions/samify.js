@@ -6,9 +6,9 @@
       'vshrink': true,
       'cols': function (width) {
         switch (true) {
-          case ((width > e3.bpsmall) && (width < e3.bpsmall_medium)) || (width > e3.bpmedium):
+          case ((width > dinosaur.bpsmall) && (width < dinosaur.bpsmall_medium)) || (width > dinosaur.bpmedium):
             return 3;
-          case ((width > e3.bpmini) && (width < e3.bpsmall)) || ((width > e3.bpsmall_medium) && (width < e3.bpmedium)):
+          case ((width > dinosaur.bpmini) && (width < dinosaur.bpsmall)) || ((width > dinosaur.bpsmall_medium) && (width < dinosaur.bpmedium)):
             return 2;
           default:
             return 1;

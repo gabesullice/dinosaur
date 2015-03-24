@@ -10,12 +10,12 @@
 /**
  * Expose themes as context reactions.
  */
-class pumpjack_helper_addjs extends context_reaction {
+class dinosaur_helper_addjs extends context_reaction {
 
   function __construct($plugin, $info) {
     parent::__construct($plugin, $info);
 
-    $this->title = t('Pumpjack JS');
+    $this->title = t('Dinosaur JS');
   }
 
   /**
@@ -113,21 +113,21 @@ class pumpjack_helper_addjs extends context_reaction {
 	 *		An array indexed by file paths containing strings describing each path "Theme Key - File Name"
 	 */
   private function asset_search() {
-    $pumpjack_root = drupal_get_path('theme', 'pumpjack');
+    $dinosaur_root = drupal_get_path('theme', 'dinosaur');
 
-    $actions = array_diff(scandir("{$pumpjack_root}/js/actions"), array('..', '.'));
-    $plugins = array_diff(scandir("{$pumpjack_root}/js/plugins"), array('..', '.'));
+    $actions = array_diff(scandir("{$dinosaur_root}/js/actions"), array('..', '.'));
+    $plugins = array_diff(scandir("{$dinosaur_root}/js/plugins"), array('..', '.'));
     $assets = array();
 
     if ($actions) {
       foreach ($actions as $action) {
-        $assets["{$pumpjack_root}/js/actions" . $action] = "Action -- {$action}";
+        $assets["{$dinosaur_root}/js/actions" . $action] = "Action -- {$action}";
       }
     }
 
     if ($plugins) {
       foreach ($plugins as $plugin) {
-        $assets["{$pumpjack_root}/js/actions" . $plugin] = "Plugin -- {$plugin}";
+        $assets["{$dinosaur_root}/js/actions" . $plugin] = "Plugin -- {$plugin}";
       }
     }
 
